@@ -11,7 +11,7 @@ const Layout = () => {
 		<div className="md:flex md:min-h-screen">
 			{/*Nav bar */}
 			<div className="md:w-1/4 bg-blue-900 px-5 py-10">
-				<h2 className="text-4xl font-black text-center text-white">CRK - Clientes</h2>
+				<h2 className="text-4xl font-black text-center text-white">CRM - Clientes</h2>
 				<nav className="mt-10">
 					<Link 
 						className={`${URLActual === "/clientes" ? "text-blue-300" : "text-white"} transition delay-75 duration-200 text-2xl block mt-2 hover:text-blue-300`}
@@ -26,7 +26,7 @@ const Layout = () => {
 				</nav>	
 			</div>
 
-			<div className="md:w-3/4 p-10">				
+			<div className="md:w-3/4 p-10 md:h-screen overflow-scroll">				
 				<Outlet/>
 			</div>
 			
