@@ -38,6 +38,15 @@ const Formulario = () => {
 			min(3, "El nombre es muy corto").
 			max(20, "El nombre es muy largo").
 			required("El nombre del ciente es obligatorio"),
+		empresa:Yup.
+			string().
+			required("El nombre de la empresa es obligatorio"),
+		email:Yup.
+			string().
+			email("Email no valido").
+			required("El emaio es obligatorio"),
+		telefono:Yup.number().typeError("El numero no es valido").integer("Numero no valido"),
+		
 		
 	})
 
@@ -99,7 +108,12 @@ const Formulario = () => {
 									className="mt-2 block w-full p-3 bg-gray-50"
 									placeholder="Empresa del cliente"
 									name="empresa"
-								/>
+									/>
+									{errors.empresa && touched.empresa ? (
+										<Alerta>
+											{errors.empresa}
+										</Alerta>
+									) :null}
 							</div>
 							<div className="mb-4">
 								<label
@@ -114,6 +128,11 @@ const Formulario = () => {
 									placeholder="Email del cliente"
 									name="email"
 								/>
+								{errors.email && touched.email ? (
+										<Alerta>
+											{errors.email}
+										</Alerta>
+									) :null}
 							</div>
 							<div className="mb-4">
 								<label
@@ -128,6 +147,11 @@ const Formulario = () => {
 									placeholder="Telefono del cliente"
 									name="telefono"
 								/>
+								{errors.telefono && touched.telefono ? (
+										<Alerta>
+											{errors.telefono}
+										</Alerta>
+									) :null}
 							</div>
 							<div className="mb-4">
 								<label
@@ -143,6 +167,11 @@ const Formulario = () => {
 									placeholder="Notas del cliente"
 									name="notas"
 								/>
+								{errors.notas && touched.notas ? (
+										<Alerta>
+											{errors.notas}
+										</Alerta>
+									) :null}
 							</div>
 
 							<input
