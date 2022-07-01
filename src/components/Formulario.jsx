@@ -45,9 +45,13 @@ const Formulario = () => {
 			string().
 			email("Email no valido").
 			required("El emaio es obligatorio"),
-		telefono:Yup.number().typeError("El numero no es valido").integer("Numero no valido"),
-		
-		
+		telefono:Yup.
+			number().
+			positive("Numero no valido").
+			integer("Numero no valido").
+			min(10, "Numero no valido").
+			max(12, "Numero no valido").
+			typeError("El numero no es valido")
 	})
 
 	const handleSubmit = (values) => {
