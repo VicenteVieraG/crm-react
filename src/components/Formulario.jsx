@@ -49,13 +49,26 @@ const Formulario = () => {
 			number().
 			positive("Numero no valido").
 			integer("Numero no valido").
-			min(10, "Numero no valido").
-			max(12, "Numero no valido").
 			typeError("El numero no es valido")
 	})
 
-	const handleSubmit = (values) => {
+	const handleSubmit = async(values) => {
+		try {
+			const url = "http://localhost:4000/clientes";
 
+			const respuesta = await fetch(url, {
+				method: "POST",
+				body: JSON.stringify(values),
+				headers: {
+					"Content-Type": "application/json"
+				}
+			});
+
+			const resultado = await respuesta.json();
+			console.log(resultado);
+		} catch (error) {
+			cosole.log(error);
+		}
 	}
 
 	return (
