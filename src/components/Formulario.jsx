@@ -1,5 +1,6 @@
 import React from 'react'
 import Alerta from './Alerta'
+import {useNavigate} from "react-router-dom"
 import { Formik, Form, Field} from 'formik'
 import * as Yup from 'yup'
 
@@ -32,6 +33,8 @@ import * as Yup from 'yup'
 //y las validaciones de cada campo.
 
 const Formulario = () => {
+	const navigate = useNavigate();
+
 	const nuevoClienteSchema = Yup.object().shape({
 		nombre:Yup.
 			string().
@@ -66,6 +69,8 @@ const Formulario = () => {
 
 			const resultado = await respuesta.json();
 			console.log(resultado);
+
+			navigate("/clientes");
 		} catch (error) {
 			cosole.log(error);
 		}
@@ -85,7 +90,10 @@ const Formulario = () => {
 							notas:""
 						}
 					}
-					onSubmit={(values) => handleSubmit(values)}
+					onSubmit={async (values, {resetForm}) => {
+						await handleSubmit(values);
+						resetForm();
+					}}
 					validationSchema={nuevoClienteSchema}
 			>
 				{({errors, touched}) => {

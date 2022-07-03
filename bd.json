@@ -7,6 +7,30 @@
       "telefono": "3311782995",
       "notas": "owo",
       "id": 1
+    },
+    {
+      "nombre": "uwuntu",
+      "empresa": "Tim Drim",
+      "email": "uwuntu@uwuntu.com",
+      "telefono": "3311782995",
+      "notas": "awa de owo",
+      "id": 2
+    },
+    {
+      "nombre": "Batman",
+      "empresa": "Liga de la Justicia",
+      "email": "batman@batman.com",
+      "telefono": "3311782995",
+      "notas": "el guazontle sigue libre",
+      "id": 3
+    },
+    {
+      "nombre": "momon",
+      "empresa": "los negros",
+      "email": "momon@gmail.com",
+      "telefono": "3311782995",
+      "notas": "xD",
+      "id": 4
     }
   ]
 }
